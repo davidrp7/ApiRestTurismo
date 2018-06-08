@@ -6,6 +6,20 @@ const app = express()
 const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 5000
 
+var portada = [
+	
+	{
+		id: '0',
+		etiq: 'DEPARTAMENTO DE NARIÑO',
+		lema: 'Desde el mar hasta el Galeras',
+		imgband: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_Nari%C3%B1o.svg/1200px-Flag_of_Nari%C3%B1o.svg.png',
+		imgescud: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Escudo_de_Nari%C3%B1o.svg/1200px-Escudo_de_Nari%C3%B1o.svg.png',
+		descrip: 'Nariño es uno de los treinta y dos departamentos que, junto con Bogotá, Distrito Capital, forman la República de Colombia. Su capital es San Juan de Pasto. Está ubicado en el extremo suroeste del país, en las regiones andina y pacífica, limitando al norte con Cauca, al este con Putumayo, al sur con la República de Ecuador y al oeste con el océano Pacífico. Con unos 1 745 000 habitantes en 2015, es el séptimo departamento más poblado, por detrás de Antioquia, Valle del Cauca, Cundinamarca, Atlántico, Bolívar y Santander. El departamento recibe su nombre del prócer de la independencia y presidente Antonio Nariño. Nariño presenta una geografía diversa y clima variado según las altitudes: caluroso en la planicie del Pacífico y frío en la parte montañosa, donde vive la mayor parte de la población, situación que se repite en sentido norte-sur. El departamento es esencialmente agrícola y ganadero.'		
+	}	
+	
+
+];
+
 var users = [
     {
         id: '0',
@@ -119,6 +133,22 @@ var places = [
 		ubc: 'La Cruz', 
 		img:'https://storage.googleapis.com/pnn-web/uploads/2013/08/Do%C3%B1a_Juana_-__R%C3%ADo_2-_Fotografia_Archivo_de_Parques_.jpg',		
 		desc: 'Dentro del Parque Nacional Natural se localizan los volcanes Doña Juana, Ánimas y Petacas, que en conjunto son denominados COMPLEJO VOLCÁNICO DOÑA JUANA – CASCABEL, así como un conjunto de formaciones geográficas y ecológicas de gran valor paisajístico, científico y cultural, a la vez que aporta a la regulación de cuencas hidrográficas estratégicas que abastecen acueductos e hidroeléctricas de los municipios del norte de Nariño y sur del Cauca.'
+	},
+	
+	{
+		id: '11',
+		title: 'Parque Cañon del Juanambu', 
+		ubc: 'Buesaco', 
+		img:'http://tierracolombiana.org/wp-content/uploads/2017/09/juanambu-4.jpg',		
+		desc: 'Este parque ofrece a los turistas la oportunidad de  conocer una parte de la  historia colombiana, mientras se diviertes es sus frescas aguas, con un clima considerado de los mejores del mundo. Entre sus atracciones ofrece la oportunidad de realizar deportes acuáticos como lo es el canotaje de travesia, el kayakismo, natación en rio y en piscinas naturales.'
+	},
+	
+	{
+		id: '12',
+		title: 'Reserva Natural La Planada', 
+		ubc: 'Ricaurte', 
+		img:'http://www.colparques.net/images/planada/3.jpg',		
+		desc: 'La Reserva Natural La Planada es considerada como uno de los lugares de mayor riqueza biológica en Colombia. Descrita como el imperio supremo de las Epifitas por el botánico Alwyn Gentry, este paraíso de líquenes, bromelias, musgos y orquideas, que en su bastedad cubre tres mil doscientas hectáreas de bosques de niebla, constituyen para la comunidad AWÁ una de sus mayores satisfacciones y para el país, un aporte concreto de lo que se puede llegar a realizar cuando se asume un compromiso ineludible y permanente con el medio ambiente.'
 	}
 ];
 
@@ -133,16 +163,18 @@ app.get('/', (req, res) => {
 
 //*************************************************************
 
-
 //Listar los lugares
 app.get('/places', (req, res) => {
     res.send(places)
 })
 
+app.get('/portada', (req, res) => {
+	res.send(portada)
+})
+
 //*************************************************************
 
 
-// Validar user and pass 
 app.post('/login', (req, res) => {
     let data = req.body;
     let login = [{searchUser: false,id: '0',user: '',password: '',name: '',email: '',img_user:''}];
@@ -165,18 +197,9 @@ app.post('/login', (req, res) => {
     res.send(login)
 })
 
-// Metodo para crear una cuenta de usuario
 app.post('/signup', (req, res) => {
     let data = req.body;
     let consecutive = users.length;
-    // let itemUser = {
-    //     id: consecutive,
-    //     user: data.user,
-    //     password: data.pass,
-    //     name: data.name,
-    //     email: data.email,
-    //     img_user: 'https://www.littlemiracles.com.au/wp-content/uploads/2015/08/kid-on-ipad.png'
-    // };
     let itemUser = {
         user: data.user,
         password: data.pass,
@@ -184,9 +207,7 @@ app.post('/signup', (req, res) => {
         email: data.email,
         repassword: '123'
     };
-    // users.push(itemUser)
-    res.send(itemUser)
-    // res.send("usuario creado correctamente")
+    res.send(itemUser) 
 })
 
 //***************************************************************
