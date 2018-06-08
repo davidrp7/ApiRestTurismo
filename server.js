@@ -6,6 +6,16 @@ const app = express()
 const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 5000
 
+var users = [
+    {
+        id: '0',
+        user: 'admin',
+        password: '123456',
+        name: 'admin',
+        email: 'admin@worldcup.com',
+        img_user: 'https://www.littlemiracles.com.au/wp-content/uploads/2015/08/kid-on-ipad.png'
+    }
+];
 
 var places = [
     {
@@ -36,7 +46,7 @@ var places = [
 		id: '4',
 		title: 'Volcan de Cumbal', 
 		ubc: 'Cumbal', 
-		img:'http://www.colombia.travel/sites/default/files/styles/activity_banner/public/24_procolombia.jpg?itok=tYBOEPpt',
+		img:'http://www.colparques.net/images/cumbal/4.jpg',
 		desc: 'El Volcán Cumbal es el más alto del sur de Colombia, en el departamento de Nariño, con una altitud de 4.764 msnm. En el pasado se extraía azufre de sus fumarolas y cráter usando métodos tradicionales de minería. Los mineros también explotaban el hielo, que en algunas estaciones cubre su cima, para ofrecerlo en el mercado de Ipiales'
 	
 	},
@@ -82,6 +92,14 @@ var places = [
 		ubc: 'Pasto', 
 		img:'http://www.turismopasto.gov.co/images/ecologico/chimayoy.jpg',		
 		desc: 'Su nombre significa ir al encuentro con el sol, está ubicado a 4 Km de Pasto, sobre la vía panamericana. Un lugar ideal para disfrutar de la naturaleza y descansar. El objetivo de éste es informar a turistas y pastusos, sobre las medidas de cuidado ambiental. En el centro hay senderos perfectos para caminatas ecológicas mientras realizas actividades relacionadas con el cuidado del medio ambiente.'
+	},
+	
+	{
+		id: '10',
+		title: 'Complejo Volcánico Doña Juana', 
+		ubc: 'La Cruz', 
+		img:'https://storage.googleapis.com/pnn-web/uploads/2013/08/Do%C3%B1a_Juana_-__R%C3%ADo_2-_Fotografia_Archivo_de_Parques_.jpg',		
+		desc: 'Dentro del Parque Nacional Natural se localizan los volcanes Doña Juana, Ánimas y Petacas, que en conjunto son denominados COMPLEJO VOLCÁNICO DOÑA JUANA – CASCABEL, así como un conjunto de formaciones geográficas y ecológicas de gran valor paisajístico, científico y cultural, a la vez que aporta a la regulación de cuencas hidrográficas estratégicas que abastecen acueductos e hidroeléctricas de los municipios del norte de Nariño y sur del Cauca.'
 	}
 ];
 
