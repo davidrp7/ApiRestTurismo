@@ -14,7 +14,26 @@ var users = [
         name: 'admin',
         email: 'admin@worldcup.com',
         img_user: 'https://www.littlemiracles.com.au/wp-content/uploads/2015/08/kid-on-ipad.png'
+    },
+	
+	{
+        id: '1',
+        user: 'juan',
+        password: 'juanespana',
+        name: 'Juan Diego',
+        email: 'juanchoe@gmail.com',
+        img_user: 'https://cdn.icon-icons.com/icons2/546/PNG/512/1455555016_users-15_icon-icons.com_53267.png'
+    },
+	
+	{
+        id: '2',
+        user: 'davidr',
+        password: 'david11',
+        name: 'David R',
+        email: 'david11@gmail.com',
+        img_user: 'https://cdn.icon-icons.com/icons2/546/PNG/512/1455555018_users-2_icon-icons.com_53266.png'
     }
+	
 ];
 
 var places = [
