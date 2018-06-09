@@ -16,9 +16,30 @@ var portada = [
 		imgescud: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Escudo_de_Nari%C3%B1o.svg/1200px-Escudo_de_Nari%C3%B1o.svg.png',
 		descrip: 'Nariño es uno de los treinta y dos departamentos que, junto con Bogotá, Distrito Capital, forman la República de Colombia. Su capital es San Juan de Pasto. Está ubicado en el extremo suroeste del país, en las regiones andina y pacífica, limitando al norte con Cauca, al este con Putumayo, al sur con la República de Ecuador y al oeste con el océano Pacífico. Con unos 1 745 000 habitantes en 2015, es el séptimo departamento más poblado, por detrás de Antioquia, Valle del Cauca, Cundinamarca, Atlántico, Bolívar y Santander. El departamento recibe su nombre del prócer de la independencia y presidente Antonio Nariño. Nariño presenta una geografía diversa y clima variado según las altitudes: caluroso en la planicie del Pacífico y frío en la parte montañosa, donde vive la mayor parte de la población, situación que se repite en sentido norte-sur. El departamento es esencialmente agrícola y ganadero.'		
 	}	
-	
-
 ];
+
+let favoritosplace = [
+    {
+        id:'0',
+        id_place: '1',
+        id_user: '0'
+
+    },
+	
+	{
+        id:'0',
+        id_place: '2',
+        id_user: '0'
+
+    },
+	
+    {
+        id:'1',
+        id_place: '10',
+        id_user: '1'
+    }
+];
+
 
 var users = [
     {
@@ -47,7 +68,6 @@ var users = [
         email: 'david11@gmail.com',
         img_user: 'https://cdn.icon-icons.com/icons2/546/PNG/512/1455555018_users-2_icon-icons.com_53266.png'
     }
-	
 ];
 
 var places = [
@@ -199,7 +219,6 @@ app.post('/login', (req, res) => {
 
 app.post('/signup', (req, res) => {
     let data = req.body;
-    let consecutive = users.length;
     let itemUser = {
         user: data.user,
         password: data.pass,
@@ -207,8 +226,31 @@ app.post('/signup', (req, res) => {
         email: data.email,
         repassword: '123'
     };
+	
+    users.push(itemUser)
     res.send(itemUser) 
 })
+
+
+app.get('/favoritosplace', (req, res) => {
+    let data = req.query;
+    let id_user = data.user
+    let placeTmp = [];
+
+    for(let i=0; i<favoritosplace.length; i++){
+        if( favoritosplace[i]['id_user'] == '0' ){
+            let itemPlace = {
+				
+				title: places[favoritosplace[i]['id_place']]["title"],
+				img: places[favoritosplace[i]['id_place']]['img']
+			               
+            };
+            placeTmp.push(itemPlace);
+        }
+    }
+    res.send(placeTmp)
+})
+
 
 //***************************************************************
 
