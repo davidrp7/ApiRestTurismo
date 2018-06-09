@@ -219,7 +219,11 @@ app.post('/login', (req, res) => {
 
 app.post('/signup', (req, res) => {
     let data = req.body;
+	let consecutive = user.length;
+	
+	
     let itemUser = {
+		id: consecutive,
         user: data.user,
         password: data.pass,
         name: data.name,
@@ -227,7 +231,7 @@ app.post('/signup', (req, res) => {
         repassword: '123'
     };
 	
-    users.push(itemUser)
+    users.push(itemUser);
     res.send(itemUser) 
 })
 
