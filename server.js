@@ -209,6 +209,15 @@ app.get('/portada', (req, res) => {
 	res.send(portada)
 })
 
+app.get('/users', (req, res) => {
+	res.send(users)
+})
+
+app.get('/favoritosplace', (req, res) => {
+	res.send(favoritosplace)
+})
+
+
 //*************************************************************
 
 
@@ -236,9 +245,7 @@ app.post('/login', (req, res) => {
 
 app.post('/signup', (req, res) => {
     let data = req.body;
-	let consecutive = user.length;	
     let itemUser = {
-		id: consecutive,
         user: data.user,
         password: data.pass,
         name: data.name,
