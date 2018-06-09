@@ -22,14 +22,13 @@ let favoritosplace = [
     {
         id:'0',
         id_place: '1',
-        id_user: '0'
-
+        id_user: '1'
     },
 	
 	{
         id:'0',
         id_place: '2',
-        id_user: '0'
+        id_user: '1'
 
     },
 	
@@ -70,17 +69,64 @@ var users = [
     }
 ];
 
-var places = [
-    {
-		id: '1', 
-		title: 'Laguna de la Cocha', 
+var parques = [
+	
+	{
+		id: '1',
+		title: 'Parque Sanquianga', 
+		ubc: 'El Charco', 
+		img:'http://www.colparques.net/images/sanquianga/4.jpg',
+		desc: 'Posee gran cantidad de ecosistema manglar, equivalente al 53% de los manglares del departamento de Nariño y 20% del Pacífico colombiano. Este ecosistema por su productividad es la base de alimentación y reproducción de diversidad de especies marinas y de estuarios, y lugar de nidación de diferentes especies de aves. Posee abundantes esteros y deltas influidos por los ríos Sanquianga, Patía, La Tola, Aguacatal y Tapaje, y numerosas islas pobladas por diversos árboles, típicos del manglar y del bosque húmedo tropical, aves residentes y migratorias, igualmente posee gran extensión de playas donde anidan tortugas marinas.'
+	},
+	
+	
+	{
+		id: '2',
+		title: 'Parque Natural Chimayoy', 
+		ubc: 'Pasto', 
+		img:'http://www.turismopasto.gov.co/images/ecologico/chimayoy.jpg',		
+		desc: 'Su nombre significa ir al encuentro con el sol, está ubicado a 4 Km de Pasto, sobre la vía panamericana. Un lugar ideal para disfrutar de la naturaleza y descansar. El objetivo de éste es informar a turistas y pastusos, sobre las medidas de cuidado ambiental. En el centro hay senderos perfectos para caminatas ecológicas mientras realizas actividades relacionadas con el cuidado del medio ambiente.'
+	},
+	
+		{
+		id: '3',
+		title: 'Parque Natural Cañon del Juanambu', 
+		ubc: 'Buesaco', 
+		img:'http://tierracolombiana.org/wp-content/uploads/2017/09/juanambu-4.jpg',		
+		desc: 'Este parque ofrece a los turistas la oportunidad de  conocer una parte de la  historia colombiana, mientras se diviertes es sus frescas aguas, con un clima considerado de los mejores del mundo. Entre sus atracciones ofrece la oportunidad de realizar deportes acuáticos como lo es el canotaje de travesia, el kayakismo, natación en rio y en piscinas naturales.'
+	},
+	
+	{
+		id: '4',
+		title: 'Reserva Natural La Planada', 
+		ubc: 'Ricaurte', 
+		img:'http://www.colparques.net/images/planada/3.jpg',		
+		desc: 'La Reserva Natural La Planada es considerada como uno de los lugares de mayor riqueza biológica en Colombia. Descrita como el imperio supremo de las Epifitas por el botánico Alwyn Gentry, este paraíso de líquenes, bromelias, musgos y orquideas, que en su bastedad cubre tres mil doscientas hectáreas de bosques de niebla, constituyen para la comunidad AWÁ una de sus mayores satisfacciones y para el país, un aporte concreto de lo que se puede llegar a realizar cuando se asume un compromiso ineludible y permanente con el medio ambiente.'
+	},
+	
+	{
+		id: '5',
+		title: 'El Parque Natural Regional Páramo de Paja Blanca', 
+		ubc: 'Paja Blanca', 
+		img:'http://www.colparques.net/images/planada/3.jpg',
+		desc: 'Se encuentran 15 especies de mamíferos como el cusumbo, erizo y lobo colorado; 11 especies de ranas y reptiles, 111 especies de aves entre las que se destacan el Tucán ó Paletón Pechigris, considerada una especie amenazada que requiere una protección especial. También 231 especies de flora o plantas, de las cuales 154 son usadas por la comunidad como medicina y alimento.'
+		
+	},
+	
+	{
+		id: '6', 
+		title: 'Reserva Natural Isla de la Corota', 
 		ubc: 'Pasto', 
 		img:'http://xn--nario-rta.gov.co/turismo/images/lcocha1.jpg?crc=126793232',
 		desc: 'La Laguna de la Cocha, también llamada lago Guamuez, es en un gran embalse natural de origen glacial, ubicado en la locación colombiana de El Encano, corregimiento del municipio de Pasto, en el departamento de Nariño. Es el segundo cuerpo de agua natural más grande de la nación, después del lago de Tota. En el año 2000, mediante el decreto 698 del 18 de abril, Colombia inscribió la laguna de La Cocha o lago Guamuez como humedal de importancia nacional e internacional dentro del Convenio de Ramsar, siendo el primero con esta calificación en la región andina colombiana'		
-	},
-    
+	}
+	
+	
+];
+
+var places = [
 	{
-		id: '2', 
+		id: '1', 
 		title: 'Santuario de las Lajas', 
 		ubc: 'Ipiales', 
 		img:'http://www.lanacion.com.co/wp-content/uploads/2017/10/Catedral-de-las-Lajas-696x392.jpg',
@@ -88,7 +134,7 @@ var places = [
 	},
 	
 	{
-		id: '3', 
+		id: '2', 
 		title: 'Museo Taminango', 
 		ubc: 'Pasto', 
 		img:'http://farm4.static.flickr.com/3778/12997665185_072be9162f.jpg',
@@ -96,7 +142,7 @@ var places = [
 	},
 	
 	{
-		id: '4',
+		id: '3',
 		title: 'Volcan de Cumbal', 
 		ubc: 'Cumbal', 
 		img:'http://www.colparques.net/images/cumbal/4.jpg',
@@ -105,7 +151,7 @@ var places = [
 	},
 	
 	{
-		id: '5',
+		id: '4',
 		title: 'Museo del Oro', 
 		ubc: 'Pasto', 
 		img:'http://proyectos.banrepcultural.org/museo-del-oro-narino/sites/default/files/adjuntos/monarino02_1.jpg',
@@ -114,7 +160,7 @@ var places = [
 	},
 	
 	{
-		id: '6',
+		id: '5',
 		title: 'Volcan Galeras', 
 		ubc: 'Pasto', 
 		img:'http://p8.storage.canalblog.com/87/70/1014638/77045482_o.jpg',		
@@ -123,7 +169,7 @@ var places = [
 	},
 	
 	{
-		id: '7',
+		id: '6',
 		title: 'Volcan Azufral', 
 		ubc: 'Tuquerres', 
 		img:'http://www.colparques.net/images/azufral/4.jpg',		
@@ -132,44 +178,12 @@ var places = [
 	},
 	
 	{
-		id: '8',
-		title: 'Parque Sanquianga', 
-		ubc: 'El Charco', 
-		img:'http://www.colparques.net/images/sanquianga/4.jpg',
-		desc: 'Posee gran cantidad de ecosistema manglar, equivalente al 53% de los manglares del departamento de Nariño y 20% del Pacífico colombiano. Este ecosistema por su productividad es la base de alimentación y reproducción de diversidad de especies marinas y de estuarios, y lugar de nidación de diferentes especies de aves. Posee abundantes esteros y deltas influidos por los ríos Sanquianga, Patía, La Tola, Aguacatal y Tapaje, y numerosas islas pobladas por diversos árboles, típicos del manglar y del bosque húmedo tropical, aves residentes y migratorias, igualmente posee gran extensión de playas donde anidan tortugas marinas.'
-	},
-	
-	{
-		id: '9',
-		title: 'Parque Natural Chimayoy', 
-		ubc: 'Pasto', 
-		img:'http://www.turismopasto.gov.co/images/ecologico/chimayoy.jpg',		
-		desc: 'Su nombre significa ir al encuentro con el sol, está ubicado a 4 Km de Pasto, sobre la vía panamericana. Un lugar ideal para disfrutar de la naturaleza y descansar. El objetivo de éste es informar a turistas y pastusos, sobre las medidas de cuidado ambiental. En el centro hay senderos perfectos para caminatas ecológicas mientras realizas actividades relacionadas con el cuidado del medio ambiente.'
-	},
-	
-	{
-		id: '10',
+		id: '7',
 		title: 'Complejo Volcánico Doña Juana', 
 		ubc: 'La Cruz', 
 		img:'https://storage.googleapis.com/pnn-web/uploads/2013/08/Do%C3%B1a_Juana_-__R%C3%ADo_2-_Fotografia_Archivo_de_Parques_.jpg',		
 		desc: 'Dentro del Parque Nacional Natural se localizan los volcanes Doña Juana, Ánimas y Petacas, que en conjunto son denominados COMPLEJO VOLCÁNICO DOÑA JUANA – CASCABEL, así como un conjunto de formaciones geográficas y ecológicas de gran valor paisajístico, científico y cultural, a la vez que aporta a la regulación de cuencas hidrográficas estratégicas que abastecen acueductos e hidroeléctricas de los municipios del norte de Nariño y sur del Cauca.'
-	},
-	
-	{
-		id: '11',
-		title: 'Parque Cañon del Juanambu', 
-		ubc: 'Buesaco', 
-		img:'http://tierracolombiana.org/wp-content/uploads/2017/09/juanambu-4.jpg',		
-		desc: 'Este parque ofrece a los turistas la oportunidad de  conocer una parte de la  historia colombiana, mientras se diviertes es sus frescas aguas, con un clima considerado de los mejores del mundo. Entre sus atracciones ofrece la oportunidad de realizar deportes acuáticos como lo es el canotaje de travesia, el kayakismo, natación en rio y en piscinas naturales.'
-	},
-	
-	{
-		id: '12',
-		title: 'Reserva Natural La Planada', 
-		ubc: 'Ricaurte', 
-		img:'http://www.colparques.net/images/planada/3.jpg',		
-		desc: 'La Reserva Natural La Planada es considerada como uno de los lugares de mayor riqueza biológica en Colombia. Descrita como el imperio supremo de las Epifitas por el botánico Alwyn Gentry, este paraíso de líquenes, bromelias, musgos y orquideas, que en su bastedad cubre tres mil doscientas hectáreas de bosques de niebla, constituyen para la comunidad AWÁ una de sus mayores satisfacciones y para el país, un aporte concreto de lo que se puede llegar a realizar cuando se asume un compromiso ineludible y permanente con el medio ambiente.'
-	}
+	}	
 ];
 
 
@@ -183,9 +197,12 @@ app.get('/', (req, res) => {
 
 //*************************************************************
 
-//Listar los lugares
 app.get('/places', (req, res) => {
     res.send(places)
+})
+
+app.get('/parques', (req, res) => {
+    res.send(parques)
 })
 
 app.get('/portada', (req, res) => {
@@ -219,9 +236,7 @@ app.post('/login', (req, res) => {
 
 app.post('/signup', (req, res) => {
     let data = req.body;
-	let consecutive = user.length;
-	
-	
+	let consecutive = user.length;	
     let itemUser = {
 		id: consecutive,
         user: data.user,
